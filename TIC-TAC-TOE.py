@@ -90,9 +90,10 @@ def gamechoice():
 def print_score():
     os.system('cls')
     print('---------------') 
-    print('|    SCORE    |')  
+    print('     SCORE    ')  
     print('---------------')
-    print(' %s : %d\n' %(player_name[0],score[player_name[0]]))
+    print(' %s : %d' %(player_name[0],score[player_name[0]]))
+    print('---------------')
     print(' %s : %d\n' %(player_name[1],score[player_name[1]]))
 
 
