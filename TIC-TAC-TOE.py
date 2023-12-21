@@ -68,9 +68,9 @@ def gamechoice():
         showboard()
 
 os.system("cls")
+flag_assignment()
 showboard()
 while status==-1:
     pos=int(input('Player %d please enter the position (1-9): '%p))
     update_board(pos)
     checkgame()
-
