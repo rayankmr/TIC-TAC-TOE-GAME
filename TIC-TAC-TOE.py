@@ -2,10 +2,12 @@
 
 import os
 
-player=1
-p=1 # Player Flag [when p==1 player 1's turn, when p==2 player 2's Turn]
-status=-1
-board=[' ',' ',' ',' ',' ',' ',' ',' ',' ']
+def flag_assignment():
+    global player,p,status,board
+    player=1
+    p=1 # Player Flag [when p==1 player 1's turn, when p==2 player 2's Turn]
+    status=-1
+    board=[' ',' ',' ',' ',' ',' ',' ',' ',' ']
 
 def showboard():
     print(" %c | %c | %c" %(board[0],board[1],board[2]))
@@ -43,16 +45,27 @@ def checkgame():
     if board[0]==board[1]==board[2]=='X' or board[3]==board[4]==board[5]=='X' or board[6]==board[7]==board[8]=='X' or board[0]==board[3]==board[6]=='X' or board[1]==board[4]==board[7]=='X' or board[2]==board[5]==board[8]=='X' or board[0]==board[4]==board[8]=='X' or board[6]==board[4]==board[2]=='X':
         status=1 
         print('Player 1 Won')
+        gamechoice()
     elif board[0]==board[1]==board[2]=='O' or board[3]==board[4]==board[5]=='O' or board[6]==board[7]==board[8]=='O' or board[0]==board[3]==board[6]=='O' or board[1]==board[4]==board[7]=='O' or board[2]==board[5]==board[8]=='O' or board[0]==board[4]==board[8]=='O' or board[6]==board[4]==board[2]=='O':
         status=2
         print('Player 2 Won')
+        gamechoice()
     else:
         if ' ' not in board:
             status=0
             print('Draw')
+            gamechoice()
 
     return status
 
+def gamechoice():
+    choice=input('Please enter \'q\' to quit or \'p\' to play again: ')
+    if choice=='q':
+        quit()
+    elif choice=='p':
+        flag_assignment()
+        os.system('cls')
+        showboard()
 
 os.system("cls")
 showboard()
@@ -60,3 +73,4 @@ while status==-1:
     pos=int(input('Player %d please enter the position (1-9): '%p))
     update_board(pos)
     checkgame()
+
