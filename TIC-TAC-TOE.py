@@ -50,12 +50,12 @@ def checkgame():
     # status == 2  [PLAYER 2 WON]
     if board[0]==board[1]==board[2]=='X' or board[3]==board[4]==board[5]=='X' or board[6]==board[7]==board[8]=='X' or board[0]==board[3]==board[6]=='X' or board[1]==board[4]==board[7]=='X' or board[2]==board[5]==board[8]=='X' or board[0]==board[4]==board[8]=='X' or board[6]==board[4]==board[2]=='X':
         status=1 
-        print('Player %s Won' %player_name2[0])
+        print('%s Won this game' %player_name2[0])
         score[player_name2[0]]=score[player_name2[0]] +1
         gamechoice()
     elif board[0]==board[1]==board[2]=='O' or board[3]==board[4]==board[5]=='O' or board[6]==board[7]==board[8]=='O' or board[0]==board[3]==board[6]=='O' or board[1]==board[4]==board[7]=='O' or board[2]==board[5]==board[8]=='O' or board[0]==board[4]==board[8]=='O' or board[6]==board[4]==board[2]=='O':
         status=2
-        print('Player %s Won' %player_name2[1])
+        print('%s Won this game' %player_name2[1])
         score[player_name2[1]]=score[player_name2[1]] +1
         gamechoice()
     else:
@@ -89,9 +89,9 @@ def gamechoice():
             
 def print_score():
     os.system('cls')
-    print('-----------') 
-    print('|  SCORE  |')  
-    print('-----------')
+    print('---------------') 
+    print('|    SCORE    |')  
+    print('---------------')
     print(' %s : %d\n' %(player_name[0],score[player_name[0]]))
     print(' %s : %d\n' %(player_name[1],score[player_name[1]]))
 
